@@ -10,7 +10,7 @@ glibc_filename="glibc-2.26.tar.xz"
 args=("$@")
 
 function build() {
-    (cd "./${prefix}-$1" && makepkg -i "${args[@]}")
+    (cd "./${prefix}-$1" && makepkg -i -f -c --skippgpcheck "${args[@]}")
 }
 
 build binutils
